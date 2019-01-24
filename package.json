@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "PORT=8080 DB_CON=mongodb://localhost/overdrive nodemon index.js",
+    "dev": "PORT=8080 DB_HOST=localhost:27017 DB_USER=\"super_user\" DB_PASS=\"p@ssw0rd\" DB_NAME=\"movies-db\" nodemon index.js",
     "start": "node index.js"
   },
   "author": "",

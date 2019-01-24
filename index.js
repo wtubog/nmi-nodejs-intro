@@ -11,10 +11,19 @@ app.use(bodyParser());
 app.use('/movies', moviesRoute);
 
 const startServer = async () => {
-  await mongoose.connect(process.env.DB_CON)
-  app.listen(process.env.PORT, () => {
-    console.log(`Listening on port ${process.env.PORT}`);
-  })
+  try {
+    await mongoose.connect(`mongodb://${process.env.DB_HOST}`, {
+      user: process.env.DB_USER,
+      pass: process.env.DB_PASS,
+      dbName: process.env.DB_NAME
+    });
+
+    app.listen(process.env.PORT, () => {
+      console.log(`Listening on port ${process.env.PORT}`);
+    })
+  } catch(e) {
+    console.log(e)
+  }
 }
 
 startServer();
