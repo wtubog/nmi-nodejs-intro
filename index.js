@@ -10,6 +10,10 @@ app.use(bodyParser());
 
 app.use('/movies', moviesRoute);
 
+app.get('/health-check', (req,res) => {
+  res.send('hello');
+})
+
 const startServer = async () => {
   try {
     await mongoose.connect(`mongodb://${process.env.DB_HOST}`, {
