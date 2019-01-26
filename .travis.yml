@@ -19,4 +19,5 @@ script:
   - docker build --build-arg DB_HOST="$DB_HOST" --build-arg DB_USER="$DB_USER" --build-arg DB_PASS="$DB_PASS" --build-arg PORT="$PORT" --build-arg DB_NAME="$DB_NAME" -t movies-backend .
   - docker tag movies-backend:latest 187325535940.dkr.ecr.ap-southeast-1.amazonaws.com/movies-backend:latest
   - docker push 187325535940.dkr.ecr.ap-southeast-1.amazonaws.com/movies-backend:latest
-  - aws ecs update-service --service movies-service-v5 --cluster movies-app-cluster2 --force-new-deploy 
+  - docker run movies-backend
+  # - aws ecs update-service --service movies-service-v5 --cluster movies-app-cluster2 --force-new-deploy 
