@@ -1,8 +1,8 @@
 sudo: required
 
-env:
-  global:
-    - PATH=$HOME/.local/bin:$PATH
+# env:
+#   global:
+#     - PATH=$HOME/.local/bin:$PATH
 
 services:
   - docker
