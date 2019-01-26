@@ -6,10 +6,16 @@ COPY ./package.json ./
 RUN npm install
 COPY . .
 
-# ENV PORT=8080
-# ENV DB_HOST=172.17.0.1:27017
-# ENV DB_NAME=movies-db
-# ENV DB_USER=super_user
-# ENV DB_PASS=p@ssw0rd
+ARG db_name
+ARG port
+ARG db_host
+ARG db_user
+ARG db_pass
+
+ENV PORT=$port
+ENV DB_HOST=$db_host
+ENV DB_NAME=$db_name
+ENV DB_USER=$db_user
+ENV DB_PASS=$db_pass
 
 CMD ["npm", "run", "start"]
