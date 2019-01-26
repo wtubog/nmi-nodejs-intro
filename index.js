@@ -16,6 +16,7 @@ app.get('/health-check', (req,res) => {
 
 const startServer = async () => {
   try {
+    console.log('test')
     await mongoose.connect(`mongodb://${process.env.DB_HOST}`, {
       user: process.env.DB_USER,
       pass: process.env.DB_PASS,
