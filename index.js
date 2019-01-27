@@ -11,7 +11,7 @@ app.use(bodyParser());
 app.use('/movies', moviesRoute);
 
 app.get('/health-check', (req,res) => {
-  res.send('hello');
+  res.send('Im the best!');
 })
 
 const startServer = async () => {
