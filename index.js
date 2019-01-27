@@ -16,13 +16,9 @@ app.get('/health-check', (req,res) => {
 
 const startServer = async () => {
   try {
-    console.log('test')
     console.log(process.env.DB_HOST)
-    await mongoose.connect(`mongodb://${encodeURIComponent(process.env.DB_HOST)}`, {
-      user: process.env.DB_USER,
-      pass: process.env.DB_PASS,
-      dbName: process.env.DB_NAME
-    });
+    // console.log(process.env.DB_HOST)
+    await mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}${process.env.DB_NAME}`);
 
     app.listen(process.env.PORT, () => {
       console.log(`Listening on port ${process.env.PORT}`);
