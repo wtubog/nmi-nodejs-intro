@@ -18,7 +18,7 @@ const startServer = async () => {
   try {
     console.log('test')
     console.log(process.env.DB_HOST)
-    await mongoose.connect(`mongodb://${process.env.DB_HOST}`, {
+    await mongoose.connect(`mongodb://${encodeURIComponent(process.env.DB_HOST)}`, {
       user: process.env.DB_USER,
       pass: process.env.DB_PASS,
       dbName: process.env.DB_NAME
