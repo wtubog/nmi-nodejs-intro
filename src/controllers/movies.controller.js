@@ -27,5 +27,9 @@ module.exports = {
         res.status(500).send();
       }
     }
+  },
+
+  healthCheck(req,res) {
+    res.send("I'm the best!");
   }
 }

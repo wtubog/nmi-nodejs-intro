@@ -10,10 +10,6 @@ app.use(bodyParser());
 
 app.use('/movies', moviesRoute);
 
-app.get('/health-check', (req,res) => {
-  res.send('Im the best!');
-})
-
 const startServer = async () => {
   try {
     console.log(process.env.DB_HOST)
